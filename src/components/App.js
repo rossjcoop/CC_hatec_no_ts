@@ -4,21 +4,27 @@ import { Provider } from 'react-redux';
 import store from '../store';
 import{ BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
+import Layout from './Layout';
+import Home from './Home';
+import Posts from './Posts';
+import Post from './Post';
+
+
 
 class App extends Component {
   render() {
     return (
-      <Router>
-        <Provider store={store}>
-          <div>
-            <Switch>
-              <Route path="/posts/:postId" component={Post} />
-              <Route path="/posts" component={Posts} />
-              <Route exact path ="/" component={Home} />
-            </Switch>
-          </div>
-        </Provider>
-      </Router>
+      <Provider store={store}>
+        <Router>      
+            <Layout>
+              <Switch>
+                <Route path="/posts/:postId" component={Post} />
+                <Route path="/posts" component={Posts} />
+                <Route exact path ="/" component={Home} />
+              </Switch>
+            </Layout>
+        </Router>
+      </Provider>
     );
   }
 }

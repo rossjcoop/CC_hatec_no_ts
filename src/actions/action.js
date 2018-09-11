@@ -12,7 +12,6 @@ export function getAll() {
         axios.get(url + "comments");
       ])
       .then(axios.spread(function (posts, users, comments) {
-        //... but this callback will be executed only when both requests are complete.
         console.log("Posts: ", posts.data);
         console.log("Users: ", users.data);
         console.log("Comments: ", comments.data)
@@ -26,4 +25,11 @@ export function getAll() {
             }
         })
       }));
+}
+
+export function selectPost(postId) {
+    store.dispatch({
+        type: actionTypes.SELECT_POST,
+        postId: postId
+    })
 }
