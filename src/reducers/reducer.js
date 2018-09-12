@@ -5,9 +5,9 @@ const initialState = {
         comments: [],
     },
     viewpost: {
-        post: "",
-        comments: []
-    }
+        post: {},
+        comments: [],
+    },
 };
 
 export default function (state = initialState, action) {
@@ -15,7 +15,7 @@ export default function (state = initialState, action) {
         case "GET_ALL":
             return {...state, data: action.payload}
         case "SELECT_POST":
-            return {...state, viewpost: state.data.filter(item => item.posts.id && item.comments.postId == action.payload)}
+            return {...state, viewpost: {post: state.data.posts.find(item => item.id == action.payload), comments: state.data.comments.filter(item => item.postId == action.payload)}}
         default:
             return state
     }

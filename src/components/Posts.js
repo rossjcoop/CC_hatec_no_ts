@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 
 class Posts extends Component {
@@ -18,15 +18,14 @@ class Posts extends Component {
                     </div>                       
                 ))}
             </div>
-
         )
     }
-}
+};
 
 function mapStateToProps(appState) {
     return {
         data: appState.data
     }
-}
+};
 
-export default connect(mapStateToProps)(Posts)
+export default connect(mapStateToProps)(Posts);

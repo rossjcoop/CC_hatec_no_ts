@@ -18,9 +18,9 @@ class App extends Component {
           <Router>      
             <Layout>
               <Switch>
-                <Route exact path ="/" component={Home} />  
-                <Route path="/posts" component={Posts} />
                 <Route path="/posts/:postId" component={Post} />
+                <Route path="/posts" component={Posts} />
+                <Route exact path ="/" component={Home} />                             
               </Switch>
             </Layout>
          </Router> 
