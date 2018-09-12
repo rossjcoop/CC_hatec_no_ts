@@ -12,10 +12,6 @@ export function getAll() {
         axios.get(url + "comments")
       ])
       .then(axios.spread(function (posts, users, comments) {
-        console.log("Posts: ", posts.data);
-        console.log("Users: ", users.data);
-        console.log("Comments: ", comments.data)
-
         store.dispatch({
             type: actionTypes.GET_ALL,
             payload: {
@@ -24,12 +20,12 @@ export function getAll() {
                 comments: comments.data,
             }
         })
-      }));
-}
+      }))
+};
 
 export function selectPost(postId) {
     store.dispatch({
         type: actionTypes.SELECT_POST,
         payload: postId
     })
-}
+};

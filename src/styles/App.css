@@ -1,28 +1,40 @@
-.App {
+#beans {
+  width: 200px;
+  height: 100%
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  padding: 10px;
+}
+
+.container {
+  width: 75%;
+  margin: 0 auto;
+  background color: rgb(36, 154, 125)
+}
+
+.post {
+  padding: 10px
+}
+
+h2 {
+  color: black;
+}
+
+p {
+  font-size: 20px;
+}
+
+
+.link .card {
+	text-decoration: none;
+	color: black;
+}
+
+
+.footer {
   text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  margin: 0 auto
 }
