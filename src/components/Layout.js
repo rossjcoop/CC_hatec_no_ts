@@ -11,9 +11,7 @@ class Layout extends Component {
                     <h1>Pork and Beans</h1>
                     <h3>Post about anything, comment on anything.</h3>
                 </div>
-                <div className="mainContainer">
                     {this.props.children}
-                </div>
                 <div className="footer">
                     Copywrite 2018 Pork and Beans
                 </div>
@@ -21,5 +19,8 @@ class Layout extends Component {
         )
     }
 }
+
+
+
 
 export default withRouter(Layout)

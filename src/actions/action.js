@@ -7,9 +7,9 @@ const url = "https://jsonplaceholder.typicode.com/"
 
 export function getAll() {
     return axios.all([
-        axios.get(url + "posts");
-        axios.get(url + "users");
-        axios.get(url + "comments");
+        axios.get(url + "posts"),
+        axios.get(url + "users"),
+        axios.get(url + "comments")
       ])
       .then(axios.spread(function (posts, users, comments) {
         console.log("Posts: ", posts.data);
@@ -21,7 +21,7 @@ export function getAll() {
             payload: {
                 posts: posts.data,
                 users: users.data,
-                comments: coments.data,
+                comments: comments.data,
             }
         })
       }));
@@ -30,6 +30,6 @@ export function getAll() {
 export function selectPost(postId) {
     store.dispatch({
         type: actionTypes.SELECT_POST,
-        postId: postId
+        payload: postId
     })
 }
